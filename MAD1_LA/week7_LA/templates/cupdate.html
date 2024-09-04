@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<form action="/course/{{y.course_id}}/update" method="POST" id="update-course-form">
+		<div>
+			<label>Course Code:</label>
+			<input type="text" name="code" value="{{y.course_code}}" disabled />
+		</div><br><br>
+		<div>
+			<label>Course Name:</label>
+			<input type="text" name="c_name" value="{{y.course_name}}" required />
+		</div><br><br>
+		<div>
+			<label>Course Description:</label>
+			<input type="text" name="desc" value="{{y.course_description}}"/>
+		</div><br><br>
+		<div>
+			<input type="submit" value = "Submit">
+		</div>
+	</form>
+</body>
+</html>

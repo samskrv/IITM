@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Home</title>
+	<style>div.c {
+  position: absolute;
+  right: 150px;
+  font-size: 50px
+}</style>
+</head>
+<body>
+	<h1>Students list</h1><div class="c"><a href="/courses">Go to courses</a></div>
+	<table id = "all-students">
+		<thead>
+		<tr>
+			<th>SNo</th>
+			<th>Roll Number</th>
+			<th>First Name</th>
+			<th>Last Name</th>
+			<th>Actions</th>
+		</tr>
+		</thead>
+		<tbody>
+          {% for n in getstudent %}
+              <tr>
+                  <td>{{loop.index}}</td>
+                  <td><a href='/student/{{n["student_id"]}}'>{{n["roll_number"]}}</a></td>
+                  <td>{{n["first_name"]}}</td>
+                  <td>{{n["last_name"]}}</td>
+                  <td>
+                    <a href='/student/{{n["student_id"]}}/update' type="button">Update</a>
+                    <a href='/student/{{n["student_id"]}}/delete' type="button">Delete</a>
+                  </td>
+              </tr>
+          {% endfor %}
+        </tbody>
+	</table><br><br>
+	<a href="/student/create">+Add Student</a>
+</body>
+</html>

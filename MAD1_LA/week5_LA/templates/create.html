@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Add Student</title>
+    <link rel="stylesheet" href="../static/style.css" />
+  </head>
+  <body>
+    <h1>Add a Student</h1>
+    <form method="POST" action="/student/create" id="create_form">
+      <div>
+        <label for="roll">Roll Number:</label>
+        <input type="text" id="roll" name="roll" required />
+      </div>
+      <div>
+        <label for="f_name">First Name:</label>
+        <input type="text" id="f_name" name="f_name" required />
+      </div>
+      <div>
+        <label for="l_name">Last Name:</label>
+        <input type="text" id="l_name" name="l_name" />
+      </div>
+      <div id="checkbox">
+        <label for="course">Select Course:</label>
+        <input type="checkbox" name="course" id="course_1" value="course_1" />
+        <label for="course_1">MAD I</label>
+
+        <input type="checkbox" name="course" id="course_2" value="course_2" />
+        <label for="course_2">DBMS</label>
+
+        <input type="checkbox" name="course" id="course_3" value="course_3" />
+        <label for="course_3">PDSA</label>
+
+        <input type="checkbox" name="course" id="course_4" value="course_4" />
+        <label for="course_4">BDM</label>
+      </div>
+      <div>
+        <input type="submit" value="submit" />
+      </div>
+    </form>
+  </body>
+</html>

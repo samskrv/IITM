@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<h1 align="middle">Course Details</h1>
+	<table id = "course-detail">
+		<thead>
+			<tr>
+				<th>Course Code</th>
+				<th>Course Name</th>
+				<th>Course Description</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>{{sock.course_code}}</td>
+				<td>{{sock.course_name}}</td>
+				<td>{{sock.course_description}}</td>
+			</tr>
+		</tbody>
+	</table><br><br><h1 align="middle">Enrollment List</h1><br><br>
+	<table id = "course-table">
+		<thead>
+			<tr>
+				<th>SNo</th>
+				<th>Roll Number</th>
+				<th>Student First Name</th>
+				<th>Student Last Name</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for y in jacket %}
+			<tr>
+				<td>{{loop.index}}</td>
+				{% for n in y %}
+				<td>{{n.roll_number}}</td>
+				<td>{{n.first_name}}</td>
+				<td>{{n.last_name}}</td>
+				{% endfor %}
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+	<a href="/course">Go Back</a>
+</body>
+</html>
